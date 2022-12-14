@@ -10,7 +10,17 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <h1>Welcome to the places I have visited!</h1>
+    <h1>List of All the Places I have visited!</h1>
+
+    @using PlacesYouveBeen.Models;
+
+    <ul>
+    @foreach(Place place in Model)
+    {
+      <li><a href="/place/@place.Id">@place.CityName</a></li>
+    }
+    </ul>
+
     <a href='/new'>Add a new location</a>
     <br>
     <a href='/place'>See list of visited places</a>
